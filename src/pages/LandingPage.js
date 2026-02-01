@@ -257,7 +257,7 @@ export function renderLandingPage() {
               </p>
             </div>
 
-            <p class="cta-note">Pembayaran aman via transfer bank / e-wallet</p>
+
           </div>
         </div>
       </section>
