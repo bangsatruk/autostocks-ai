@@ -13,8 +13,10 @@ import { renderFilterPanel, applyFilters } from './components/FilterPanel.js';
 import { renderHowToReadPage } from './pages/HowToReadPage.js';
 import { renderStockDetailPage, calculateScoreProfile } from './pages/StockDetailPage.js';
 import { renderLandingPage, attachLandingEventListeners } from './pages/LandingPage.js';
+import { initPixel, trackEvent } from './utils/metaPixel.js';
 
 // Initialize theme on load
+initPixel();
 initTheme();
 
 /**
@@ -289,6 +291,9 @@ function render() {
     const theme = route.page === 'landing-dark' ? 'dark' : 'light';
     app.innerHTML = renderLandingPage(theme);
     attachLandingEventListeners();
+
+    // Track ViewContent for landing page
+    trackEvent('ViewContent');
     return;
   }
 
