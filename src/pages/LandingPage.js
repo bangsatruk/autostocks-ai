@@ -295,6 +295,13 @@ export function renderLandingPage() {
                 <p>Klik tombol "Akses Sekarang", isi form pemesanan, dan lakukan pembayaran. Akun akan aktif otomatis setelah konfirmasi.</p>
               </div>
             </div>
+
+            <div class="faq-item">
+              <button class="faq-question">Apakah nantinya harus bayar lagi?</button>
+              <div class="faq-answer">
+                <p>Tidak, aplikasi ini sekali bayar dan tidak perlu berlangganan lagi.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
