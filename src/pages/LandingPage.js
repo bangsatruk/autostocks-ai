@@ -4,9 +4,9 @@
  * Render the Landing Page with P.A.S structure
  * @returns {string} HTML string
  */
-export function renderLandingPage() {
+export function renderLandingPage(theme = 'light') {
   return `
-    <div class="landing-page">
+    <div class="landing-page" data-theme="${theme}">
       <!-- Hero Section -->
       <section class="landing-hero">
         <div class="landing-container">

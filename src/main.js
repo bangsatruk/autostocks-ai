@@ -82,6 +82,8 @@ function parseRoute() {
     return { page: 'home' };
   } else if (hash === '#/akses/tutorial') {
     return { page: 'tutorial' };
+  } else if (hash === '#/lp') {
+    return { page: 'landing-dark' };
   } else {
     return { page: 'landing' };
   }
@@ -276,9 +278,10 @@ function render() {
   let showHeader = true;
   let showFooter = true;
 
-  // If on landing page, render landing and return early
-  if (route.page === 'landing') {
-    app.innerHTML = renderLandingPage();
+  // If on landing page (light or dark), render landing and return early
+  if (route.page === 'landing' || route.page === 'landing-dark') {
+    const theme = route.page === 'landing-dark' ? 'dark' : 'light';
+    app.innerHTML = renderLandingPage(theme);
     attachLandingEventListeners();
     return;
   }
@@ -445,6 +448,6 @@ render();
 
 // Load stocks data if on app pages
 const initialRoute = parseRoute();
-if (initialRoute.page !== 'landing') {
+if (initialRoute.page !== 'landing' && initialRoute.page !== 'landing-dark') {
   loadStocksData();
 }
