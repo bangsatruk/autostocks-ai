@@ -10,10 +10,7 @@ export function renderLandingPage() {
       <!-- Hero Section -->
       <section class="landing-hero">
         <div class="landing-container">
-          <div class="landing-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-            <div class="hero-badge" style="margin-bottom: 0;">🚀 Tools Trading AI Saham Indonesia</div>
-            <a href="#/akses" class="login-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500;">Member Login ➜</a>
-          </div>
+          <div class="hero-badge">🚀 Tools Trading AI Saham Indonesia</div>
           <h1 class="landing-title">
             Capek Trading Saham<br>
             <span class="gradient-text pain">Rugi Terus?</span>
