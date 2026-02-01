@@ -224,7 +224,7 @@ export function renderLandingPage() {
                 <div class="price-strike text-danger">Rp. 1.000.000,-</div>
                 
                 <div class="discount-badge">
-                  <span class="discount-percent">DISCOUNT 94%</span>
+                  <span class="discount-percent">DISCOUNT 75%</span>
                   <span class="discount-text">Potongan khusus pemesanan hari ini</span>
                 </div>
               </div>
