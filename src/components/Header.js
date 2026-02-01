@@ -20,9 +20,7 @@ export function renderHeader(activePage = 'home') {
           <a href="#/akses" class="nav-link ${activePage === 'home' ? 'active' : ''}" data-page="home">
             Home
           </a>
-          <a href="#/akses" class="nav-link ${activePage === 'stocks' ? 'active' : ''}" data-page="stocks">
-            All Stocks
-          </a>
+
           <a href="#/akses/tutorial" class="nav-link ${activePage === 'tutorial' ? 'active' : ''}" data-page="tutorial">
             Tutorial
           </a>
