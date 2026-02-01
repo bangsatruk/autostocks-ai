@@ -606,6 +606,66 @@
     margin-bottom: var(--spacing-xl);
 }
 
+.discount-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    background: rgba(239, 68, 68, 0.1);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    border: 1px dashed var(--danger);
+}
+
+.discount-percent {
+    color: var(--danger);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.discount-text {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.price-final-section {
+    margin: var(--spacing-lg) 0;
+}
+
+.price-final-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.countdown-container {
+    margin: var(--spacing-lg) 0;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xs);
+}
+
+.promo-code-box {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-primary);
+}
+
+.promo-code-box p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.promo-code-box strong {
+    color: var(--text-primary);
+}
+
 .price-strike {
     font-size: 1.5rem;
     text-decoration: line-through;
@@ -705,7 +765,7 @@
    Warranty Section
 ============================================ */
 .warranty-section {
-    background: #fff;
+    background: var(--bg-card);
     border: 2px dashed var(--primary-500);
     border-radius: var(--radius-xl);
     padding: var(--spacing-lg);
