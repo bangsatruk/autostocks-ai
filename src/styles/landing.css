@@ -857,3 +857,27 @@
         grid-template-columns: 1fr;
     }
 }
+/* Custom Countdown Timer Style */
+.countdown-timer {
+    font-family: 'JetBrains Mono', monospace; /* Digital/Monospace font */
+    font-size: 4rem;
+    font-weight: 800;
+    color: #ffffff;
+    background-color: #000000;
+    border: 4px solid #ff0000;
+    border-radius: 12px;
+    padding: 10px 20px;
+    text-align: center;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 0px #0000aa; /* Slight blue shadow for contrast/glitch effect */
+    margin: 20px auto;
+    width: fit-content;
+}
+
+@media (max-width: 768px) {
+    .countdown-timer {
+        font-size: 2.5rem;
+        padding: 8px 16px;
+        border-width: 3px;
+    }
+}

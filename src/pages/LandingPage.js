@@ -239,18 +239,10 @@ export function renderLandingPage() {
                 </div>
                 
                 <div class="promo-code-box">
-                  <p>Pakai kode <strong>"DISKON50"</strong> Untuk Potongan Tambahan 100rb berlaku selama 1 Jam</p>
+                  <p>Pakai kode <strong>"DISKON50"</strong> Untuk Potongan Tambahan 50rb berlaku selama 1 Jam</p>
                 </div>
               </div>
-              <div class="price-period" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">/lifetime • ⭐️ Sekali Bayar Seumur Hidup</div>
-              <ul class="price-features">
-                <li>✅ Sinyal BUY & Watchlist harian</li>
-                <li>✅ Entry, TP, SL untuk setiap saham</li>
-                <li>✅ Data real-time Yahoo Finance</li>
-                <li>✅ Chart TradingView terintegrasi</li>
-                <li>✅ Berita saham terkait</li>
-                <li>✅ Tutorial lengkap untuk pemula</li>
-              </ul>
+              <div class="price-period" style="display: none;"></div>
             </div>
             
             <a href="https://forms.google.com" target="_blank" class="cta-button primary large green" id="checkoutBtn">
