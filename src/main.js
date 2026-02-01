@@ -81,13 +81,13 @@ function parseRoute() {
   }
 
   // Check hash
-  if (hash.startsWith('#/akses/')) {
+  if (hash === '#/akses/tutorial') {
+    return { page: 'tutorial' };
+  } else if (hash.startsWith('#/akses/')) {
     const ticker = hash.replace('#/akses/', '');
     return { page: 'stock-detail', ticker };
   } else if (hash === '#/akses' || hash === '#/akses/') {
     return { page: 'home' };
-  } else if (hash === '#/akses/tutorial') {
-    return { page: 'tutorial' };
   } else if (hash === '#/lp') {
     return { page: 'landing-dark' };
   } else {
