@@ -222,28 +222,27 @@ export function renderLandingPage() {
               <div class="price-header">
                 <div class="price-label">TOTAL SEMUA TOOLS:</div>
                 <div class="price-strike text-danger">Rp. 1.000.000,-</div>
+                
+                <div class="discount-badge">
+                  <span class="discount-percent">DISKON 75%</span>
+                  <span class="discount-text">POTONGAN KHUSUS PEMESANAN HARI INI</span>
+                </div>
               </div>
               
               <div class="price-final-section">
-                <!-- Base Discount Level -->
-                <div class="base-price-container" style="opacity: 0.8; margin-bottom: 1rem;">
-                  <div class="price-final-label">Harga Promo Hari Ini:</div>
-                  <div class="price-amount" style="font-size: 2rem; color: var(--text-primary);">Rp 247.000</div>
-                </div>
-
-                <!-- The Gimmick Level -->
-                 <div class="special-offer-box" style="background: rgba(34, 197, 94, 0.1); border: 2px dashed #22c55e; border-radius: 12px; padding: 1.5rem; margin: 1rem 0;">
-                    <p style="margin-bottom: 0.5rem; font-weight: 600;">👇 GUNAKAN KODE: <span style="background: #22c55e; color: white; padding: 2px 8px; border-radius: 4px;">DISKON50</span> 👇</p>
-                    <div class="price-final-label" style="color: #22c55e; font-weight: 700;">JADI HANYA:</div>
-                    <div class="price-amount text-success" style="font-size: 3.5rem; text-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);">Rp 197.000</div>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 5px;">*Waktu terbatas!</p>
-                 </div>
+                <div class="price-final-label">Harga setelah Diskon :</div>
+                <div class="price-amount text-success">Rp 247.000</div>
                 
                 <div class="countdown-container">
                   <div class="countdown-label">⏳ Penawaran berakhir dalam:</div>
                   <div id="countdownTimer" class="countdown-timer">01:00:00</div>
                 </div>
+                
+                <div class="promo-code-box">
+                  <p>Gunakan kode <strong>"DISKON50"</strong> agar harganya jadi <strong>Rp 197.000</strong> (Lebih hemat 50rb!)</p>
+                </div>
               </div>
+              <div class="price-period" style="display: none;"></div>
             </div>
             
             <a href="https://dijital.web.id/autostocksai" target="_blank" class="cta-button primary large green" id="checkoutBtn">
