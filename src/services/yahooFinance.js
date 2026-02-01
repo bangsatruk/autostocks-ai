@@ -52,7 +52,12 @@ async function fetchStockData(ticker, range = '3mo', interval = '1d') {
         const url = `${YAHOO_BASE_URL}${ticker}?range=${range}&interval=${interval}`;
         const proxyUrl = `${CORS_PROXY}${encodeURIComponent(url)}`;
 
-        const response = await fetch(proxyUrl);
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+        const response = await fetch(proxyUrl, { signal: controller.signal });
+        clearTimeout(timeoutId);
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
