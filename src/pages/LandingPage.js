@@ -20,7 +20,7 @@ export function renderLandingPage(theme = 'light') {
             Hemat waktu riset berjam-jam!
           </p>
           <div class="hero-cta">
-            <a href="#checkout" class="cta-button primary green">
+            <a href="https://cuandijital.myscalev.com/autostocksai?discount_code=DISKON50" target="_blank" class="cta-button primary green">
               <span>🔥 Akses Sekarang</span>
             </a>
             <a href="#demo" class="cta-button secondary">
@@ -204,7 +204,7 @@ export function renderLandingPage(theme = 'light') {
               <div class="bonus-title">🎁 BONUS KHUSUS PEMBELIAN HARI INI</div>
               <ul class="bonus-list">
                 <li>
-                  <span class="bonus-name">📘 Ebook Tutorial Trading Pemula</span>
+                  <span class="bonus-name">📘 Modul Tutorial Trading Untuk Pemula</span>
                   <span class="bonus-value">Rp 500.000</span>
                 </li>
                 <li>
@@ -253,7 +253,7 @@ export function renderLandingPage(theme = 'light') {
               <div class="price-period" style="display: none;"></div>
             </div>
             
-            <a href="https://dijital.web.id/autostocksai?discount_code=DISKON50" target="_blank" class="cta-button primary large green" id="checkoutBtn">
+            <a href="https://cuandijital.myscalev.com/autostocksai?discount_code=DISKON50" target="_blank" class="cta-button primary large green" id="checkoutBtn">
               <span>🔥 Akses Sekarang</span>
             </a>
             
