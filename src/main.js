@@ -75,6 +75,12 @@ let dataSource = 'loading';
 function parseRoute() {
   const hash = window.location.hash || '#/';
 
+  // Check pathname for /lp (server-side rewrite support)
+  if (window.location.pathname === '/lp') {
+    return { page: 'landing-dark' };
+  }
+
+  // Check hash
   if (hash.startsWith('#/akses/')) {
     const ticker = hash.replace('#/akses/', '');
     return { page: 'stock-detail', ticker };
