@@ -197,7 +197,7 @@ export function renderLandingPage() {
       <section id="checkout" class="landing-section cta-section">
         <div class="landing-container">
           <div class="cta-box">
-            <h2>Siap Trading Lebih Smart?</h2>
+            <h2>Apa Saja yang Anda Dapatkan di AUTO STOCKS AI?</h2>
             <p>Dapatkan akses ke sinyal trading saham Indonesia dengan analisis teknikal otomatis.</p>
             
             <div class="bonus-section">
@@ -219,14 +219,30 @@ export function renderLandingPage() {
             </div>
 
             <div class="pricing-card">
-              <div class="price-tag">
-                <div class="price-strike text-danger">Rp 1.000.000</div>
-                <span class="price-currency">Rp</span>
-                <span class="price-amount text-success">199.000</span>
-                <span class="price-period">/lifetime</span>
-                <br>
-                <div class="price-lifetime">⭐️ Sekali Bayar Seumur Hidup</div>
+              <div class="price-header">
+                <div class="price-label">TOTAL SEMUA TOOLS:</div>
+                <div class="price-strike text-danger">Rp. 1.000.000,-</div>
+                
+                <div class="discount-badge">
+                  <span class="discount-percent">DISCOUNT 94%</span>
+                  <span class="discount-text">Potongan khusus pemesanan hari ini</span>
+                </div>
               </div>
+              
+              <div class="price-final-section">
+                <div class="price-final-label">Harga setelah Diskon :</div>
+                <div class="price-amount text-success">247.000,-</div>
+                
+                <div class="countdown-container">
+                  <div class="countdown-label">⏳ Penawaran berakhir dalam:</div>
+                  <div id="countdownTimer" class="countdown-timer">01:00:00</div>
+                </div>
+                
+                <div class="promo-code-box">
+                  <p>Pakai kode <strong>"DISKON50"</strong> Untuk Potongan Tambahan 100rb berlaku selama 1 Jam</p>
+                </div>
+              </div>
+              <div class="price-period" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">/lifetime • ⭐️ Sekali Bayar Seumur Hidup</div>
               <ul class="price-features">
                 <li>✅ Sinyal BUY & Watchlist harian</li>
                 <li>✅ Entry, TP, SL untuk setiap saham</li>
@@ -356,5 +372,43 @@ export function attachLandingEventListeners() {
       item.classList.toggle('active');
     });
   });
+
+  // Countdown Timer Logic
+  const timerElement = document.getElementById('countdownTimer');
+  if (timerElement) {
+    // Set duration to 1 hour (in seconds)
+    let duration = 60 * 60;
+
+    // Check if there's a stored end time to persist countdown on refresh
+    let endTime = localStorage.getItem('promoEndTime');
+    if (!endTime) {
+      endTime = Date.now() + duration * 1000;
+      localStorage.setItem('promoEndTime', endTime);
+    }
+
+    function updateTimer() {
+      const now = Date.now();
+      const distance = endTime - now;
+
+      if (distance < 0) {
+        // Reset timer if expired (scarcity tactic generally resets for new visitors/sessions)
+        endTime = Date.now() + duration * 1000;
+        localStorage.setItem('promoEndTime', endTime);
+        return;
+      }
+
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerElement.innerHTML =
+        (hours < 10 ? "0" + hours : hours) + ":" +
+        (minutes < 10 ? "0" + minutes : minutes) + ":" +
+        (seconds < 10 ? "0" + seconds : seconds);
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer(); // Initial call
+  }
 }
 
