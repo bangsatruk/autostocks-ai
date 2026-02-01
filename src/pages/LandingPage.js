@@ -212,7 +212,15 @@ export function renderLandingPage(theme = 'light') {
                   <span class="bonus-value">Rp 100.000</span>
                 </li>
                 <li>
-                  <span class="bonus-name">🚀 Ebook TA for Mega Profit</span>
+                  <span class="bonus-name">🚀 Ebook Technical Analysis for Mega Profit</span>
+                  <span class="bonus-value">Rp 200.000</span>
+                </li>
+                <li>
+                  <span class="bonus-name">🐋 Ebook Bandarmology (Membeli Saham Gaya Bandar Bursa)</span>
+                  <span class="bonus-value">Rp 200.000</span>
+                </li>
+                <li>
+                  <span class="bonus-name">💰 E-book Anak Muda Miliarder Saham</span>
                   <span class="bonus-value">Rp 200.000</span>
                 </li>
               </ul>
