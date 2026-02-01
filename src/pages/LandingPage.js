@@ -201,7 +201,7 @@ export function renderLandingPage(theme = 'light') {
             <p>Dapatkan akses ke sinyal trading saham Indonesia dengan analisis teknikal otomatis.</p>
             
             <div class="bonus-section">
-              <div class="bonus-title">🎁 BONUS SPESIAL HARI INI</div>
+              <div class="bonus-title">🎁 BONUS KHUSUS PEMBELIAN HARI INI</div>
               <ul class="bonus-list">
                 <li>
                   <span class="bonus-name">📘 Ebook Tutorial Trading Pemula</span>
@@ -228,8 +228,8 @@ export function renderLandingPage(theme = 'light') {
 
             <div class="pricing-card">
               <div class="price-header">
-                <div class="price-label">TOTAL SEMUA TOOLS:</div>
-                <div class="price-strike text-danger">Rp. 1.000.000,-</div>
+                <div class="price-label">TOTAL SEMUA TOOLS + BONUS:</div>
+                <div class="price-strike text-danger">Rp. 1.200.000,-</div>
                 
                 <div class="discount-badge">
                   <span class="discount-percent">DISKON 75%</span>
