@@ -1,4 +1,5 @@
 // Landing Page Component - P.A.S Method (Problem, Agitation, Solution)
+import { trackEvent } from '../utils/metaPixel.js';
 
 /**
  * Render the Landing Page with P.A.S structure
@@ -347,6 +348,21 @@ export function attachLandingEventListeners() {
           block: 'start'
         });
       }
+    });
+  });
+
+  // Track Checkout Button Clicks
+  document.querySelectorAll('a[href*="myscalev.com"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Import trackEvent dynamically if not available in scope
+      // Assuming trackEvent is imported at top level, but if this is a module, we should import it there.
+      // Since I can't change top-level imports easily in this function block without context, 
+      // I will rely on the import I'll add to the top of the file in the next tool call, 
+      // OR I can use the global attached by main.js if available. 
+      // But wait, files are modules. I need to add the import at the top of the file first.
+
+      // Actually, I'll just rely on the import I'm adding.
+      trackEvent('InitiateCheckout');
     });
   });
 
