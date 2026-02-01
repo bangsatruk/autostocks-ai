@@ -224,14 +224,14 @@ export function renderLandingPage() {
                 <div class="price-strike text-danger">Rp. 1.000.000,-</div>
                 
                 <div class="discount-badge">
-                  <span class="discount-percent">DISCOUNT 75%</span>
-                  <span class="discount-text">Potongan khusus pemesanan hari ini</span>
+                  <span class="discount-percent">DISKON 75%</span>
+                  <span class="discount-text">POTONGAN KHUSUS PEMESANAN HARI INI</span>
                 </div>
               </div>
               
               <div class="price-final-section">
                 <div class="price-final-label">Harga setelah Diskon :</div>
-                <div class="price-amount text-success">247.000,-</div>
+                <div class="price-amount text-success">Rp 247.000</div>
                 
                 <div class="countdown-container">
                   <div class="countdown-label">⏳ Penawaran berakhir dalam:</div>
