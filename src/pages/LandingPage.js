@@ -245,7 +245,7 @@ export function renderLandingPage() {
               <div class="price-period" style="display: none;"></div>
             </div>
             
-            <a href="https://forms.google.com" target="_blank" class="cta-button primary large green" id="checkoutBtn">
+            <a href="https://dijital.web.id/autostocksai" target="_blank" class="cta-button primary large green" id="checkoutBtn">
               <span>🔥 Akses Sekarang</span>
             </a>
             
