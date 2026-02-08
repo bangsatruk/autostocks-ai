@@ -21,7 +21,7 @@ export function renderLandingPage(theme = 'light') {
             Hemat waktu riset berjam-jam!
           </p>
           <div class="hero-cta">
-            <a href="https://cuandijital.myscalev.com/autostocksai?discount_code=DISKON50" target="_blank" class="cta-button primary green">
+            <a href="https://dijital.web.id/autostocksai?discount_code=DISKON50" target="_blank" class="cta-button primary green">
               <span>🔥 Akses Sekarang</span>
             </a>
             <a href="#demo" class="cta-button secondary">
@@ -254,7 +254,7 @@ export function renderLandingPage(theme = 'light') {
               <div class="price-period" style="display: none;"></div>
             </div>
             
-            <a href="https://cuandijital.myscalev.com/autostocksai?discount_code=DISKON50" target="_blank" class="cta-button primary large green" id="checkoutBtn">
+            <a href="https://dijital.web.id/autostocksai?discount_code=DISKON50" target="_blank" class="cta-button primary large green" id="checkoutBtn">
               <span>🔥 Akses Sekarang</span>
             </a>
             
