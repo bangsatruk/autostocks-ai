@@ -227,16 +227,20 @@ export function renderLandingPage(theme = 'light') {
                   <span class="bonus-name">💰 E-book Anak Muda Miliarder Saham</span>
                   <span class="bonus-value">Rp 200.000</span>
                 </li>
+                <li>
+                  <span class="bonus-name">📋 Jurnal Trading Saham Excel</span>
+                  <span class="bonus-value">Rp 250.000</span>
+                </li>
               </ul>
             </div>
 
             <div class="pricing-card">
               <div class="price-header">
                 <div class="price-label">TOTAL SEMUA TOOLS + BONUS:</div>
-                <div class="price-strike text-danger">Rp. 1.200.000,-</div>
+                <div class="price-strike text-danger">Rp. 1.450.000,-</div>
                 
                 <div class="discount-badge">
-                  <span class="discount-percent">DISKON 75%</span>
+                  <span class="discount-percent">DISKON 80%</span>
                   <span class="discount-text">POTONGAN KHUSUS PEMESANAN HARI INI</span>
                 </div>
               </div>
