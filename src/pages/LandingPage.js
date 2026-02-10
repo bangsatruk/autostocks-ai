@@ -190,6 +190,9 @@ export function renderLandingPage(theme = 'light') {
             <div class="testimonial-card full-width" style="box-shadow: none; background: transparent; padding: 0;">
               <img src="/images/testimonial_clean.webp" alt="Bukti Profit Trading" class="testimonial-image" loading="lazy" style="border-radius: 12px; width: 100%;">
             </div>
+            <div class="testimonial-card full-width" style="box-shadow: none; background: transparent; padding: 0; margin-top: 16px;">
+              <img src="/images/testiwa.webp" alt="Bukti Testimoni WhatsApp" class="testimonial-image" loading="lazy" style="border-radius: 12px; width: 100%;">
+            </div>
           </div>
         </div>
       </section>
