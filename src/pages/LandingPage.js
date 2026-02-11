@@ -186,6 +186,30 @@ export function renderLandingPage(theme = 'light') {
         <div class="landing-container">
           <h2 class="section-heading">Bukti Cuan Pake Tools Ini</h2>
           
+          <style>
+            .video-wrapper-testi {
+              position: relative;
+              width: 100%;
+              max-width: 650px;
+              margin: 20px auto;
+              border-radius: 20px;
+              overflow: hidden;
+              box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+              background-color: #000;
+            }
+            .video-wrapper-testi video {
+              width: 100%;
+              height: auto;
+              display: block;
+            }
+          </style>
+
+          <div class="video-wrapper-testi">
+            <video controls playsinline preload="metadata">
+              <source src="https://gratong.my.id/autostocksaigreen.mp4" type="video/mp4">
+            </video>
+          </div>
+
           <div class="testimonial-showcase">
             <div class="testimonial-card full-width" style="box-shadow: none; background: transparent; padding: 0;">
               <img src="/images/testimonial_clean.webp" alt="Bukti Profit Trading" class="testimonial-image" loading="lazy" style="border-radius: 12px; width: 100%;">
