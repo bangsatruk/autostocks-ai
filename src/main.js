@@ -62,7 +62,7 @@ let selectedStock = null;
 let filters = {
   signalFilter: 'all',
   strategyFilter: 'all',
-  foreignOnly: true,
+  foreignOnly: false,
   sortBy: 'accumulation'
 };
 

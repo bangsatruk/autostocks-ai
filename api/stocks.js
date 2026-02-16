@@ -144,22 +144,30 @@ function parseYahooData(ticker, data) {
 /**
  * Generate broker summary based on price momentum
  * (Yahoo Finance doesn't provide real broker data)
+ * Uses a stable day-based seed so values are consistent within a day
  */
 function generateBrokerSummary(ticker, changePercent) {
-    const seed = ticker.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
-    const rng = (min, max) => {
-        const x = Math.sin(seed + Date.now() / 86400000) * 10000;
-        return Math.floor((x - Math.floor(x)) * (max - min + 1)) + min;
+    const tickerSeed = ticker.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
+    const daySeed = Math.floor(Date.now() / 86400000); // changes once per day
+
+    // Seeded pseudo-random: unique per ticker + broker + day
+    const rng = (salt) => {
+        const x = Math.sin(tickerSeed * 9301 + salt * 49297 + daySeed * 233) * 10000;
+        return x - Math.floor(x); // 0..1
+    };
+
+    const randRange = (salt, min, max) => {
+        return Math.floor(rng(salt) * (max - min + 1)) + min;
     };
 
     const bias = changePercent > 0 ? 1.3 : 0.7;
 
-    const akBuy = rng(1000000, 15000000) * bias;
-    const akSell = rng(500000, 10000000) / bias;
-    const bkBuy = rng(500000, 10000000) * bias;
-    const bkSell = rng(300000, 8000000) / bias;
-    const zpBuy = rng(300000, 8000000) * bias;
-    const zpSell = rng(200000, 6000000) / bias;
+    const akBuy = randRange(1, 1000000, 15000000) * bias;
+    const akSell = randRange(2, 500000, 10000000) / bias;
+    const bkBuy = randRange(3, 500000, 10000000) * bias;
+    const bkSell = randRange(4, 300000, 8000000) / bias;
+    const zpBuy = randRange(5, 300000, 8000000) * bias;
+    const zpSell = randRange(6, 200000, 6000000) / bias;
 
     const foreignNet = Math.round((akBuy - akSell) + (bkBuy - bkSell) + (zpBuy - zpSell));
 
