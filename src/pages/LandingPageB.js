@@ -2,14 +2,14 @@
 import { trackEvent } from '../utils/metaPixel.js';
 
 const CHECKOUT_URL = 'https://dijital.web.id/autostocksai?discount_code=DISKON50';
-const DEMO_VIDEO_URL = 'https://www.autostocksai.com/videos/demo.webp';
+const DEMO_VIDEO_URL = 'https://sukadiskon.my.id/autostocksai.mp4';
 
 /**
  * Render the Landing Page B
  * @returns {string} HTML string
  */
 export function renderLandingPageB() {
-    return `
+  return `
     <div class="lpb">
       <!-- ============ HERO SECTION ============ -->
       <section class="lpb-hero">
@@ -101,7 +101,10 @@ export function renderLandingPageB() {
           <h2 class="lpb-section-title">Lihat Cara Kerjanya</h2>
           <p class="lpb-section-subtitle">Tonton demo singkat bagaimana AutoStocks AI membantu kamu mendapatkan sinyal trading otomatis.</p>
           <div class="lpb-video-wrapper">
-            <img src="${DEMO_VIDEO_URL}" alt="Demo AutoStocks AI" class="lpb-demo-video" loading="lazy" />
+            <video class="lpb-demo-video" autoplay muted loop playsinline controlsList="nodownload">
+              <source src="${DEMO_VIDEO_URL}" type="video/mp4">
+              Browser-mu tidak mendukung pemutar video ini.
+            </video>
           </div>
         </div>
       </section>
@@ -459,82 +462,82 @@ export function renderLandingPageB() {
  * Attach event listeners for Landing Page B
  */
 export function attachLandingPageBListeners() {
-    // Track CTA clicks
-    const ctaButtons = document.querySelectorAll('#lpb-hero-cta, #lpb-pricing-cta, #lpb-final-cta, #lpb-sticky-cta');
-    ctaButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            trackEvent('InitiateCheckout', { content_name: 'AutoStocks AI LPB' });
-        });
+  // Track CTA clicks
+  const ctaButtons = document.querySelectorAll('#lpb-hero-cta, #lpb-pricing-cta, #lpb-final-cta, #lpb-sticky-cta');
+  ctaButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      trackEvent('InitiateCheckout', { content_name: 'AutoStocks AI LPB' });
     });
+  });
 
-    // FAQ accordion
-    const faqItems = document.querySelectorAll('.lpb-faq-question');
-    faqItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const parent = item.parentElement;
-            const isOpen = parent.classList.contains('lpb-faq-open');
+  // FAQ accordion
+  const faqItems = document.querySelectorAll('.lpb-faq-question');
+  faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const parent = item.parentElement;
+      const isOpen = parent.classList.contains('lpb-faq-open');
 
-            // Close all
-            document.querySelectorAll('.lpb-faq-item').forEach(faq => faq.classList.remove('lpb-faq-open'));
+      // Close all
+      document.querySelectorAll('.lpb-faq-item').forEach(faq => faq.classList.remove('lpb-faq-open'));
 
-            // Toggle clicked
-            if (!isOpen) {
-                parent.classList.add('lpb-faq-open');
-            }
-        });
+      // Toggle clicked
+      if (!isOpen) {
+        parent.classList.add('lpb-faq-open');
+      }
     });
+  });
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('.lpb a[href^="#"]').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = document.querySelector(link.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
+  // Smooth scroll for anchor links
+  document.querySelectorAll('.lpb a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
+  });
 
-    // Social proof notification
-    const socialProof = document.getElementById('lpb-social-proof');
-    const closeBtn = document.getElementById('lpb-sp-close');
+  // Social proof notification
+  const socialProof = document.getElementById('lpb-social-proof');
+  const closeBtn = document.getElementById('lpb-sp-close');
 
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            socialProof.classList.remove('lpb-sp-show');
-        });
-    }
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      socialProof.classList.remove('lpb-sp-show');
+    });
+  }
 
-    // Show social proof after 5 seconds
-    const names = [
-        { name: 'Andi S.', time: '3 menit lalu' },
-        { name: 'Rina W.', time: '7 menit lalu' },
-        { name: 'Budi P.', time: '12 menit lalu' },
-        { name: 'Dina P.', time: '21 menit lalu' },
-        { name: 'Hadi K.', time: '35 menit lalu' },
-    ];
-    let spIndex = 0;
+  // Show social proof after 5 seconds
+  const names = [
+    { name: 'Andi S.', time: '3 menit lalu' },
+    { name: 'Rina W.', time: '7 menit lalu' },
+    { name: 'Budi P.', time: '12 menit lalu' },
+    { name: 'Dina P.', time: '21 menit lalu' },
+    { name: 'Hadi K.', time: '35 menit lalu' },
+  ];
+  let spIndex = 0;
 
-    function showSocialProof() {
-        if (!socialProof) return;
-        const person = names[spIndex % names.length];
-        const avatar = socialProof.querySelector('.lpb-sp-avatar');
-        const content = socialProof.querySelector('.lpb-sp-content');
-        avatar.textContent = person.name.charAt(0);
-        content.innerHTML = `<strong>${person.name}</strong><span>✅ Baru saja bergabung • ${person.time}</span>`;
-        socialProof.classList.add('lpb-sp-show');
-        spIndex++;
+  function showSocialProof() {
+    if (!socialProof) return;
+    const person = names[spIndex % names.length];
+    const avatar = socialProof.querySelector('.lpb-sp-avatar');
+    const content = socialProof.querySelector('.lpb-sp-content');
+    avatar.textContent = person.name.charAt(0);
+    content.innerHTML = `<strong>${person.name}</strong><span>✅ Baru saja bergabung • ${person.time}</span>`;
+    socialProof.classList.add('lpb-sp-show');
+    spIndex++;
 
-        setTimeout(() => {
-            socialProof.classList.remove('lpb-sp-show');
-        }, 5000);
-    }
+    setTimeout(() => {
+      socialProof.classList.remove('lpb-sp-show');
+    }, 5000);
+  }
 
-    setTimeout(showSocialProof, 5000);
-    setInterval(() => {
-        setTimeout(showSocialProof, Math.random() * 3000);
-    }, 15000);
+  setTimeout(showSocialProof, 5000);
+  setInterval(() => {
+    setTimeout(showSocialProof, Math.random() * 3000);
+  }, 15000);
 
-    // Track ViewContent
-    trackEvent('ViewContent', { content_name: 'Landing Page B' });
+  // Track ViewContent
+  trackEvent('ViewContent', { content_name: 'Landing Page B' });
 }
