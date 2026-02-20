@@ -2,6 +2,7 @@
 
 import './styles/index.css';
 import './styles/landing.css';
+import './styles/lpb.css';
 import { stocksData } from './data/mockStocks.js';
 import { getStocksData, clearCache } from './services/yahooFinance.js';
 import { fetchStockNews } from './services/newsService.js';
@@ -13,6 +14,7 @@ import { renderFilterPanel, applyFilters } from './components/FilterPanel.js';
 import { renderHowToReadPage } from './pages/HowToReadPage.js';
 import { renderStockDetailPage, calculateScoreProfile } from './pages/StockDetailPage.js';
 import { renderLandingPage, attachLandingEventListeners } from './pages/LandingPage.js';
+import { renderLandingPageB, attachLandingPageBListeners } from './pages/LandingPageB.js';
 import { initPixel, trackEvent } from './utils/metaPixel.js';
 
 // Initialize theme on load
@@ -77,9 +79,12 @@ let dataSource = 'loading';
 function parseRoute() {
   const hash = window.location.hash || '#/';
 
-  // Check pathname for /lp (server-side rewrite support)
+  // Check pathname for /lp and /lpb (server-side rewrite support)
   if (window.location.pathname === '/lp') {
     return { page: 'landing-dark' };
+  }
+  if (window.location.pathname === '/lpb') {
+    return { page: 'landing-b' };
   }
 
   // Check hash
@@ -92,6 +97,8 @@ function parseRoute() {
     return { page: 'home' };
   } else if (hash === '#/lp') {
     return { page: 'landing-dark' };
+  } else if (hash === '#/lpb') {
+    return { page: 'landing-b' };
   } else {
     return { page: 'landing' };
   }
@@ -297,6 +304,13 @@ function render() {
     return;
   }
 
+  // Landing Page B (/lpb)
+  if (route.page === 'landing-b') {
+    app.innerHTML = renderLandingPageB();
+    attachLandingPageBListeners();
+    return;
+  }
+
   // Load stocks data if needed for app pages
   if (stocksWithSignals.length === 0 && !isLoading && route.page !== 'landing') {
     loadStocksData();
@@ -459,6 +473,6 @@ render();
 
 // Load stocks data if on app pages
 const initialRoute = parseRoute();
-if (initialRoute.page !== 'landing' && initialRoute.page !== 'landing-dark') {
+if (initialRoute.page !== 'landing' && initialRoute.page !== 'landing-dark' && initialRoute.page !== 'landing-b') {
   loadStocksData();
 }
